@@ -1,12 +1,13 @@
-import ListGroup from './components/ListGroup';
+import Alert from "./components/Alert";
 
 function App() {
-	let items = ["red", "blue", "green", "yellow", "orange"];
-	const handleSelectItem = (item: string) => {
-		console.log(item);
-	}
-
-	return <div><ListGroup items={items} heading='Colors' onSelectItem={handleSelectItem} /></div>
+	return (
+		<div>
+			<Alert>
+				Hello <span>Lokesh</span>
+			</Alert>
+		</div>
+	);
 }
 
 export default App;
