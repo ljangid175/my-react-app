@@ -1,14 +1,12 @@
 import { useState } from "react";
 
-
 // {items: [], heading: string}
 interface Props {
-	items: string[],
+	items: string[];
 	heading: string;
+	onSelectItem: (item: string) => void;
 }
-function ListGroup({items, heading}: Props) {
-
-	// State hook         // convention used in react
+function ListGroup({ items, heading, onSelectItem }: Props) {
 	const [selectedIndex, setSelectedIndex] = useState(-1);
 
 	return (
@@ -21,11 +19,14 @@ function ListGroup({items, heading}: Props) {
 					<li
 						className={
 							selectedIndex === index
-								? 'list-group-item active'
-								: 'list-group-item'
+								? "list-group-item active"
+								: "list-group-item"
 						}
 						key={item}
-						onClick={()=> {setSelectedIndex(index)}}
+						onClick={() => {
+							setSelectedIndex(index);
+							onSelectItem(item);
+						}}
 					>
 						{item}
 					</li>
