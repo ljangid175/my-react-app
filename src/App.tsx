@@ -1,11 +1,12 @@
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
 	return (
 		<div>
-			<Alert>
-				Hello <span>Lokesh</span>
-			</Alert>
+			<Button onClick={()=> {console.log('jai shree ram');
+			}}>
+				My Button
+			</Button>
 		</div>
 	);
 }
