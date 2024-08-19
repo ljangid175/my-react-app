@@ -1,14 +1,19 @@
 import { useState } from "react";
 
-function ListGroup() {
-	let items = ["red", "blue", "green", "yellow", "orange"];
+
+// {items: [], heading: string}
+interface Props {
+	items: string[],
+	heading: string;
+}
+function ListGroup({items, heading}: Props) {
 
 	// State hook         // convention used in react
 	const [selectedIndex, setSelectedIndex] = useState(-1);
 
 	return (
 		<>
-			<h1>List Group</h1>
+			<h1>{heading}</h1>
 			{/* used below instead of this { items.length === 0 ? <p>No items Found</p> : null } */}
 			{items.length === 0 && <p>No items Found</p>}
 			<ul className="list-group">

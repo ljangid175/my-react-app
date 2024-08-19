@@ -1,7 +1,9 @@
 import ListGroup from './components/ListGroup';
 
 function App() {
-	return <div><ListGroup /></div>
+	let items = ["red", "blue", "green", "yellow", "orange"];
+
+	return <div><ListGroup items={items} heading='Colors' /></div>
 }
 
 export default App;
