@@ -2,10 +2,9 @@ import { useState } from "react";
 
 function ListGroup() {
 	let items = ["red", "blue", "green", "yellow", "orange"];
-	let selectedIndex = 0;
 
-	// hook
-	useState
+	// State hook         // convention used in react
+	const [selectedIndex, setSelectedIndex] = useState(-1);
 
 	return (
 		<>
@@ -21,7 +20,7 @@ function ListGroup() {
 								: 'list-group-item'
 						}
 						key={item}
-						onClick={()=> {selectedIndex === index}}
+						onClick={()=> {setSelectedIndex(index)}}
 					>
 						{item}
 					</li>
